@@ -6,7 +6,7 @@
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
   inline-size: 100%;
   display: grid;
-  font-family: "IBM Plex mono", sans-serif;
+  font-family: "IBM Plex mono", monospace;
   font-weight: bold;
   background-image: var(--bg-image);
   background-size: cover;
@@ -147,6 +147,15 @@
 .main__subtitle {
   margin-block-start: 10px;
 }
+
+.card p {
+  margin-block-start: 10px;
+}
+
+.card h4 {
+  margin-block-start: 19px;
+}
+
 .section__gallery .main__subtitle {
   margin-block-start: 0;
 }
@@ -265,8 +274,7 @@ p {
   .section p:last-child {
     margin-block-end: 20px;
   }
-  .section__accent .main__subtitle,
-  .section__accent p {
+  .section__cards {
     grid-column-start: 1;
     grid-column-end: 4;
   }
@@ -360,27 +368,27 @@ p {
     gap: 10px;
     column-gap: 20px;
   }
-  .section:not(.section__accent, .section__gallery) .main__subtitle,
-  .section:not(.section__accent, .section__gallery) p {
+  .section:not(.section__gallery) .main__subtitle,
+  .section:not(.section__gallery) p {
     margin-inline-start: 0px;
   }
-  .section__accent {
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: min-content auto;
+  .section__accent{
+    display: flex;
+    flex-direction: column;
   }
   .section__accent .main__title {
-    grid-row-start: 1;
-    grid-row-end: 2;
+    inline-size: 315px;
   }
-  .section__accent .main__subtitle {
-    grid-row-start: 2;
-    grid-row-end: 3;
-    grid-column: auto;
+  .section__cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
   }
-  .section__accent p {
-    grid-row-start: 2;
-    grid-row: 3;
-    grid-column: auto;
+  .card p {
+    margin-block-start: 10px;
+  }
+  .card h4 {
+  margin-block-start: 10px;
   }
   .section__gallery {
     gap: 20px;
